@@ -1,11 +1,27 @@
-<div>
-    HomeView
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+  <link rel="stylesheet" href="{{ asset('css/logout.css') }}">
+</head>
+<body>
 
-    <form method="POST" action="/logout">
-    @csrf
-    <button type="submit">Sair</button>
-</form>
-</div>
+    <div class="topo">
+        <span>HomeView</span>
 
+        <form method="POST" action="/logout">
+            @csrf
+            <button type="submit">Deslogar</button>
+        </form>
+    </div>
+
+    <main class="conteudo"></main>
+
+    <div class="canto esquerdo"></div>
+    <div class="canto direito"></div>
+
+</body>
+</html>
 
 
