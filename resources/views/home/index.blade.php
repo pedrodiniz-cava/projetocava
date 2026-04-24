@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
-  <link rel="stylesheet" href="{{ asset('css/logout.css') }}">
+  @vite('resources/css/logout.css')
 </head>
 <body>
 
