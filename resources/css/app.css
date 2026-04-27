@@ -1,146 +1,65 @@
-/* RESET */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
-
-body {
-font-family: 'Segoe UI', Arial, sans-serif;
+.img-cover {
+    object-fit: cover;
 }
 
-/* CONTAINER PRINCIPAL */
-.login-container {
-display: flex;
-height: 100vh;
+.login-box-custom {
+    width: 80%;
 }
 
-/* LADO DA IMAGEM (75%) */
-.image-section {
-width: 75%;
-}
-
-.image-section img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-/* LADO DO FORMULÁRIO (25%) */
-.form-section {
-width: 25%;
-background: #000;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-
-/* CONTEÚDO */
-.form-content {
-width: 85%;
-color: white;
-}
-
-/* LOGO (MAIOR AINDA) */
 .logo {
-text-align: center;
-margin-bottom: 25px;
+    width: 160px;
 }
 
-.logo img {
-width: 160px; /* aumentei mais */
+.custom-input {
+    background: #a67c52 !important;
+    border: none !important;
+    border-radius: 25px !important;
+    color: white !important;
 }
 
-/* TÍTULOS */
-h2 {
-text-align: center;
-margin-bottom: 5px;
-font-weight: 500;
+.custom-input::placeholder {
+    color: white;
+    opacity: 0.8;
 }
 
-.subtitle {
-text-align: center;
-font-size: 13px;
-color: #aaa;
-margin-bottom: 20px;
+.input-icon {
+    background: transparent !important;
+    border: none !important;
+    color: white;
 }
 
-/* INPUT GROUP */
-.input-group {
-margin-bottom: 15px;
+.btn-custom {
+    background: #a67c52;
+    border-radius: 25px;
+    color: white;
 }
 
-.input-group label {
-font-size: 13px;
-display: block;
-margin-bottom: 5px;
+.btn-custom:hover {
+    background: #caa472;
 }
 
-/* INPUT */
-.input-wrapper {
-background: #a67c52;
-border-radius: 25px;
-padding: 12px 15px;
+.bg-black {
+    background-color: #000 !important;
 }
 
-/* INPUT */
-.input-wrapper input {
-border: none;
-background: transparent;
-color: white;
-width: 100%;
-outline: none;
-font-size: 14px;
-}
+/* RESPONSIVO */
 
-/* PLACEHOLDER BRANCO */
-.input-wrapper input::placeholder {
-color: white;
-opacity: 0.8;
-}
+@media (max-width: 768px) {
 
-/* CHECKBOX */
-.options {
-margin-top: 10px;
-margin-bottom: 15px;
-}
+    .row {
+        height: auto !important;
+    }
 
-.checkbox-container {
-font-size: 12px;
-color: #ccc;
-display: flex;
-align-items: center;
-}
+    .img-cover {
+        height: 30vh !important;
+    }
 
-.checkbox-container input {
-margin-right: 8px;
-}
+    .login-box-custom {
+        width: 90%;
+        padding: 30px 0;
+    }
 
-/* BOTÃO */
-.btn-login {
-width: 100%;
-padding: 12px;
-border: none;
-border-radius: 25px;
-background: #a67c52;
-color: white;
-font-weight: bold;
-cursor: pointer;
-transition: 0.3s;
-}
-
-.btn-login:hover {
-background: #caa472;
-}
-
-/* FOOTER */
-footer {
-margin-top: 20px;
-text-align: center;
-}
-
-footer p {
-font-size: 12px;
-color: #777;
+    .logo {
+        width: 110px;
+    }
 }
