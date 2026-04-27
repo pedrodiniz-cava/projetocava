@@ -1,37 +1,23 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const loginForm = document.getElementById('loginForm');
+document.addEventListener("DOMContentLoaded", () => {
 
-    loginForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+    const form = document.getElementById("loginForm");
 
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const remember = document.getElementById('remember').checked;
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
 
-        if (email === "" || password === "") {
-            alert("Por favor, preencha todos os campos antes de prosseguir.");
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        if(email === "" || password === "") {
+            alert("Preencha todos os campos!");
             return;
         }
 
-        console.log("--- Tentativa de Login ---");
         console.log("Email:", email);
-        console.log("Senha:", "********"); 
-        console.log("Lembrar por 30 dias:", remember ? "Sim" : "Não");
+        console.log("Senha:", password);
 
-        const btn = document.querySelector('.btn-login');
-        const originalText = btn.innerText;
-        
-        btn.innerText = "Verificando...";
-        btn.style.opacity = "0.7";
-        btn.disabled = true;
-
-        setTimeout(() => {
-            alert("Login realizado com sucesso na interface Prime Cater!");
-            
-            btn.innerText = originalText;
-            btn.style.opacity = "1";
-            btn.disabled = false;
-        
-        }, 1500);
+        // Aqui você pode integrar com Laravel (axios ou fetch)
+        alert("Login enviado!");
     });
+
 });
