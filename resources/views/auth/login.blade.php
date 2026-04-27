@@ -1,49 +1,59 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-
-    {{-- CSS do Laravel (Vite) --}}
-    @vite('resources/css/app.css')
+    <title>Prime Cater - Login</title>
+    <link rel="stylesheet" href="style.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+    <div class="login-container">
+        <div class="image-section">
+        <img src="{{ asset('images/carne.jpg') }}" alt="Imagem">
+        </div>
 
-<div class="container">
-    <div class="login-card">
-        <div class="icon">🔒</div>
+        <div class="form-section">
+            <div class="form-content">
+                <div class="logo">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo">
+                </div>
 
-        <h2>Bem-Vindo!</h2>
-        <p>Faça login de acesso para sua conta</p>
+                <h2>Bem-Vindo!</h2>
+                <p class="subtitle">Faça login de acesso para sua conta</p>
 
-        @error('email')
-            <p>Email ou senha incorretos</p>
-        @enderror
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email">Endereço de Email</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" placeholder="seu@gmail.com" required>
+                        </div>
+                    </div>
 
-        <form method="POST" action="/login">
-            @csrf
-            <label>Email</label>
-            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" placeholder="........" required>
+                        </div>
+                    </div>
 
-            <label>Senha</label>
-            <input type="password" id="password" name="password" placeholder="********" required>
+                    <div class="options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember">
+                            <span class="checkmark"></span>
+                            Lembrar-me por 30 dias
+                        </label>
+                    </div>
 
-            <div class="remember">
-              <label>
-                  <input type="checkbox" name="remember" id="remember">
-                  Lembrar-me por 30 dias
-              </label>
+                    <button type="submit" class="btn-login">Entrar na conta</button>
+                </form>
+
+                <footer>
+                    <p>© 2026 Cava</p>
+                </footer>
             </div>
-            <button type="submit">Entrar na conta</button>
-        </form>
+        </div>
     </div>
-
-    <footer>© 2026 Cava</footer>
-</div>
-
-{{-- JS do Laravel (Vite) --}}
-@vite('resources/js/app.js')
-
+    <script src="script.js"></script>
 </body>
 </html>
