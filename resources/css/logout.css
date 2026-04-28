@@ -2,68 +2,89 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
-    background: #d9d9d9;
-    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #e9e9e9;
 }
 
-/* TOPO (agora é uma div) */
-.topo {
-    background: #4b1d87;
-    height: 80px;
+/* TOPO */
+.topbar {
+    width: 100%;
+    background: #000;
+    min-height: 60px;
+
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    align-items: center;
+
+    padding: 10px 18px;
+}
+
+/* LOGO */
+.logo-area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-img {
+    width: 45px;
+    height: auto;
+    margin-bottom: 2px;
+}
+
+.logo-text {
     color: white;
-}
-
-/* TEXTO */
-.topo span {
-    font-size: 18px;
-}
-
-/* FORM */
-.topo form {
-    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 /* BOTÃO */
-.topo button {
-    background: #e6e6e6;
+.logout-btn {
+    background: #6e4b2f;
+    color: black;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 26px;
     cursor: pointer;
     transition: 0.3s;
 }
 
-.topo button:hover {
-    background: #ccc;
+.logout-btn:hover {
+    background: #8b603d;
+    transform: scale(1.03);
 }
 
-/* CONTEÚDO */
-.conteudo {
-    height: calc(100vh - 80px);
+/* ÁREA BRANCA */
+.content-area {
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: #efefef;
 }
 
-/* CANTOS */
-.canto {
-    position: fixed;
-    width: 120px;
-    height: 120px;
-    background: #4b1d87;
-}
 
-.esquerdo {
-    bottom: 0;
-    left: 0;
-}
+/* RESPONSIVO CELULAR */
+@media (max-width: 768px) {
 
-.direito {
-    bottom: 0;
-    right: 0;
+    .topbar {
+        padding: 10px;
+    }
+
+    .logo-img {
+        width: 32px;
+    }
+
+    .logo-text {
+        font-size: 15px;
+    }
+
+    .logout-btn {
+        font-size: 16px;
+        padding: 10px 18px;
+    }
+
 }

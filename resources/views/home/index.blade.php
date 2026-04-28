@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
-  @vite('resources/css/logout.css')
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrimeCater</title>
+
+    <link rel="stylesheet" href="{{ asset('css/logout.css') }}">
 </head>
 <body>
 
-    <div class="topo">
-        <span>HomeView</span>
+    <header class="topbar">
 
-        <form method="POST" action="/logout">
+        <div class="logo-area">
+            <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo-img">
+            <h1 class="logo-text">PRIMECATER</h1>
+        </div>
+
+        <form action="{{ route('logout') }}" method="POST">
             @csrf
-            <button type="submit">Deslogar</button>
+            <button type="submit" class="logout-btn">
+                Deslogar
+            </button>
         </form>
-    </div>
 
-    <main class="conteudo"></main>
+    </header>
 
-    <div class="canto esquerdo"></div>
-    <div class="canto direito"></div>
+    <main class="content-area">
+
+    </main>
 
 </body>
 </html>
-
-
