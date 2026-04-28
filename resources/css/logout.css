@@ -59,15 +59,12 @@ body {
     transform: scale(1.03);
 }
 
-/* ÁREA BRANCA */
 .content-area {
     width: 100%;
     height: calc(100vh - 60px);
     background: #efefef;
 }
 
-
-/* RESPONSIVO CELULAR */
 @media (max-width: 768px) {
 
     .topbar {
