@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrimeCater</title>
-
+ <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="{{ asset('css/logout.css') }}">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <header class="topbar">
 
         <div class="logo-area">
-            <img src="{{ asset('img/logo.png') }}" alt="Logo" class="logo-img">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo-img">
             <h1 class="logo-text">PRIMECATER</h1>
         </div>
 
