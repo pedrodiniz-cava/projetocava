@@ -1,146 +1,155 @@
-/* RESET */
+@import 'admin-lte/dist/css/adminlte.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  }
-
-body {
-font-family: 'Segoe UI', Arial, sans-serif;
+/* 1. Ajustes Globais */
+body.login-page {
+    background-color: #f4f6f9 !important; /* Cinza leve para destacar a sombra branca */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* CONTAINER PRINCIPAL */
-.login-container {
-display: flex;
-height: 100vh;
+.login-box {
+    width: 420px !important;
 }
 
-/* LADO DA IMAGEM (75%) */
-.image-section {
-width: 75%;
+/* 2. Efeito de Flutuação e Sombra */
+.floating-card {
+    border-radius: 40px !important;
+    border: none !important;
+    background: #ffffff;
+    padding: 20px 10px;
+    
+    /* Sombra Profunda (Efeito de Flutuação) */
+    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.18) !important;
+    
+    /* Ativa a animação suave de subir e descer */
+    animation: floatingEffect 4s ease-in-out infinite;
 }
 
-.image-section img {
-width: 100%;
-height: 100%;
-object-fit: cover;
+@keyframes floatingEffect {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } /* Sobe 15px */
+    100% { transform: translateY(0px); }
 }
 
-/* LADO DO FORMULÁRIO (25%) */
-.form-section {
-width: 25%;
-background: #000;
-display: flex;
-justify-content: center;
-align-items: center;
+.login-card-body {
+    background: transparent !important;
+    padding: 25px !important;
 }
 
-/* CONTEÚDO */
-.form-content {
-width: 85%;
-color: white;
+/* 3. Logo e Tipografia (Espaçamento Ajustado) */
+.logo-text {
+    color: #1d2c8f;
+    font-weight: 700;
+    font-size: 58px;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -2px;
+    text-transform: lowercase;
 }
 
-/* LOGO (MAIOR AINDA) */
-.logo {
-text-align: center;
-margin-bottom: 25px;
+.sub-logo {
+    font-size: 10px;
+    color: #a0a0a0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-top: 25px; /* Espaço maior solicitado entre Prime e a Frase */
+    display: block;
+    font-weight: 500;
 }
 
-.logo img {
-width: 160px; /* aumentei mais */
+/* 4. Labels e Campos */
+.label-custom {
+    color: #1d2c8f;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    display: block;
 }
 
-/* TÍTULOS */
-h2 {
-text-align: center;
-margin-bottom: 5px;
-font-weight: 500;
+.custom-field-container {
+    display: flex;
+    align-items: center;
+    border: 1.8px solid #1d2c8f;
+    border-radius: 50px;
+    background: #ffffff;
+    height: 52px;
+    padding: 0 20px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
 }
 
-.subtitle {
-text-align: center;
-font-size: 13px;
-color: #aaa;
-margin-bottom: 20px;
+/* Efeito de foco no campo */
+.custom-field-container:focus-within {
+    box-shadow: 0 0 10px rgba(29, 44, 143, 0.15);
+    border-color: #151f6d;
 }
 
-/* INPUT GROUP */
-.input-group {
-margin-bottom: 15px;
+.custom-icon-box {
+    color: #1d2c8f;
+    font-size: 18px;
+    min-width: 25px;
+    display: flex;
+    justify-content: center;
 }
 
-.input-group label {
-font-size: 13px;
-display: block;
-margin-bottom: 5px;
+.custom-input-field {
+    flex: 1;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 100%;
+    color: #1d2c8f;
+    font-size: 16px;
+    padding-left: 15px !important; /* Evita que o texto bata no ícone */
 }
 
-/* INPUT */
-.input-wrapper {
-background: #a67c52;
-border-radius: 25px;
-padding: 12px 15px;
+/* 5. Checkbox */
+.check-label {
+    font-weight: 400 !important;
+    color: #1d2c8f;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-/* INPUT */
-.input-wrapper input {
-border: none;
-background: transparent;
-color: white;
-width: 100%;
-outline: none;
-font-size: 14px;
+/* 6. Botão Centralizado */
+.login-btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
 }
 
-/* PLACEHOLDER BRANCO */
-.input-wrapper input::placeholder {
-color: white;
-opacity: 0.8;
+.login-btn {
+    width: 90%; 
+    height: 52px;
+    border-radius: 50px !important;
+    background-color: #151f6d !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    transition: all 0.3s ease;
 }
 
-/* CHECKBOX */
-.options {
-margin-top: 10px;
-margin-bottom: 15px;
+.login-btn:hover {
+    background-color: #0d144d !important;
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(21, 31, 109, 0.2);
 }
 
-.checkbox-container {
-font-size: 12px;
-color: #ccc;
-display: flex;
-align-items: center;
-}
-
-.checkbox-container input {
-margin-right: 8px;
-}
-
-/* BOTÃO */
-.btn-login {
-width: 100%;
-padding: 12px;
-border: none;
-border-radius: 25px;
-background: #a67c52;
-color: white;
-font-weight: bold;
-cursor: pointer;
-transition: 0.3s;
-}
-
-.btn-login:hover {
-background: #caa472;
-}
-
-/* FOOTER */
-footer {
-margin-top: 20px;
-text-align: center;
-}
-
-footer p {
-font-size: 12px;
-color: #777;
+/* 7. Copyright */
+.copyright {
+    color: #1d2c8f;
+    font-size: 13px;
+    margin-top: 40px;
+    font-weight: 600;
+    opacity: 0.8;
 }

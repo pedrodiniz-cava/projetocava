@@ -3,62 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Cater - Login</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Login Prime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body>
-    <div class="login-container">
-        <div class="image-section">
-        <img src="{{ asset('images/carne.jepg') }}" alt="Imagem">
-        </div>
+<body class="hold-transition login-page">
 
-        <div class="form-section">
-            <div class="form-content">
-                <div class="logo">
-                    <img src="{{ asset('images/primecarterlogo.png') }}" alt="Logo">
+<div class="login-box">
+    <div class="card login-card floating-card">
+        <div class="card-body login-card-body">
+
+            <div class="text-center mb-5">
+                <h1 class="logo-text">prime</h1>
+                <p class="sub-logo">PIONEIRA EM SOLUÇÕES<br>INOVADORAS DE PROTEÍNAS</p>
+            </div>
+
+            @if(session('erro'))
+                <div class="alert alert-danger py-2 mb-4" style="border-radius: 12px; font-size: 14px;">
+                    <i class="fas fa-exclamation-circle mr-2"></i> {{ session('erro') }}
+                </div>
+            @endif
+
+            <form action="/login" method="POST">
+                @csrf
+
+                <div class="form-group mb-4">
+                    <label class="label-custom">Digite o seu Email</label>
+                    <div class="custom-field-container">
+                        <span class="custom-icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <input type="email" name="email" class="custom-input-field" placeholder="........" required>
+                    </div>
                 </div>
 
-                <h2>Bem-Vindo!</h2>
-                <p class="subtitle">Faça login de acesso para sua conta</p>
-
-                @error('email')
-                    <p style="color:red; margin-bottom:10px;">{{ $message }}</p>
-                @enderror
-
-                <form id="loginForm" method="POST" action="/login">
-                    @csrf
-                    <div class="input-group">
-                        <label for="email">Endereço de Email</label>
-                        <div class="input-wrapper">
-                            <input type="email" id="email" name="email" placeholder="seu@gmail.com" required>
-                        </div>
+                <div class="form-group mb-4">
+                    <label class="label-custom">Senha</label>
+                    <div class="custom-field-container">
+                        <span class="custom-icon-box">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" name="password" class="custom-input-field" placeholder="........" required>
                     </div>
+                </div>
 
-                    <div class="input-group">
-                        <label for="password">Senha</label>
-                        <div class="input-wrapper">
-                            <input type="password" id="password" name="password" placeholder="........" required>
-                        </div>
-                    </div>
-
-                    <div class="options">
-                        <label class="checkbox-container">
-                            <input type="checkbox" id="remember" name="remember">
-                            <span class="checkmark"></span>
+                <div class="mb-4 d-flex align-items-center">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" id="remember" name="remember">
+                        <label for="remember" class="custom-control-label check-label">
                             Lembrar-me por 30 dias
                         </label>
                     </div>
+                </div>
 
-                    <button type="submit" class="btn-login">Entrar na conta</button>
-                </form>
+                <div class="login-btn-container">
+                    <button type="submit" class="btn login-btn">
+                        Entrar na conta
+                    </button>
+                </div>
 
-                <footer>
-                    <p>© 2026 Cava</p>
-                </footer>
-            </div>
+            </form>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <p class="text-center mt-4 copyright">
+        © Prime
+    </p>
+</div>
+
 </body>
 </html>
