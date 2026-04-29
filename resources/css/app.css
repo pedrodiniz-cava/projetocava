@@ -1,65 +1,155 @@
-.img-cover {
-    object-fit: cover;
+@import 'admin-lte/dist/css/adminlte.min.css';
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+
+/* 1. Ajustes Globais */
+body.login-page {
+    background-color: #f4f6f9 !important; /* Cinza leve para destacar a sombra branca */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
 }
 
-.login-box-custom {
-    width: 80%;
+.login-box {
+    width: 420px !important;
 }
 
-.logo {
-    width: 160px;
-}
-
-.custom-input {
-    background: #a67c52 !important;
+/* 2. Efeito de Flutuação e Sombra */
+.floating-card {
+    border-radius: 40px !important;
     border: none !important;
-    border-radius: 25px !important;
-    color: white !important;
+    background: #ffffff;
+    padding: 20px 10px;
+    
+    /* Sombra Profunda (Efeito de Flutuação) */
+    box-shadow: 0 35px 90px rgba(0, 0, 0, 0.18) !important;
+    
+    /* Ativa a animação suave de subir e descer */
+    animation: floatingEffect 4s ease-in-out infinite;
 }
 
-.custom-input::placeholder {
-    color: white;
-    opacity: 0.8;
+@keyframes floatingEffect {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); } /* Sobe 15px */
+    100% { transform: translateY(0px); }
 }
 
-.input-icon {
+.login-card-body {
     background: transparent !important;
+    padding: 25px !important;
+}
+
+/* 3. Logo e Tipografia (Espaçamento Ajustado) */
+.logo-text {
+    color: #1d2c8f;
+    font-weight: 700;
+    font-size: 58px;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: -2px;
+    text-transform: lowercase;
+}
+
+.sub-logo {
+    font-size: 10px;
+    color: #a0a0a0;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin-top: 25px; /* Espaço maior solicitado entre Prime e a Frase */
+    display: block;
+    font-weight: 500;
+}
+
+/* 4. Labels e Campos */
+.label-custom {
+    color: #1d2c8f;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.custom-field-container {
+    display: flex;
+    align-items: center;
+    border: 1.8px solid #1d2c8f;
+    border-radius: 50px;
+    background: #ffffff;
+    height: 52px;
+    padding: 0 20px;
+    margin-bottom: 5px;
+    transition: all 0.3s;
+}
+
+/* Efeito de foco no campo */
+.custom-field-container:focus-within {
+    box-shadow: 0 0 10px rgba(29, 44, 143, 0.15);
+    border-color: #151f6d;
+}
+
+.custom-icon-box {
+    color: #1d2c8f;
+    font-size: 18px;
+    min-width: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.custom-input-field {
+    flex: 1;
     border: none !important;
-    color: white;
+    background: transparent !important;
+    outline: none !important;
+    box-shadow: none !important;
+    height: 100%;
+    color: #1d2c8f;
+    font-size: 16px;
+    padding-left: 15px !important; /* Evita que o texto bata no ícone */
 }
 
-.btn-custom {
-    background: #a67c52;
-    border-radius: 25px;
-    color: white;
+/* 5. Checkbox */
+.check-label {
+    font-weight: 400 !important;
+    color: #1d2c8f;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.btn-custom:hover {
-    background: #caa472;
+/* 6. Botão Centralizado */
+.login-btn-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
 }
 
-.bg-black {
-    background-color: #000 !important;
+.login-btn {
+    width: 90%; 
+    height: 52px;
+    border-radius: 50px !important;
+    background-color: #151f6d !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    transition: all 0.3s ease;
 }
 
-/* RESPONSIVO */
+.login-btn:hover {
+    background-color: #0d144d !important;
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(21, 31, 109, 0.2);
+}
 
-@media (max-width: 768px) {
-
-    .row {
-        height: auto !important;
-    }
-
-    .img-cover {
-        height: 30vh !important;
-    }
-
-    .login-box-custom {
-        width: 90%;
-        padding: 30px 0;
-    }
-
-    .logo {
-        width: 110px;
-    }
+/* 7. Copyright */
+.copyright {
+    color: #1d2c8f;
+    font-size: 13px;
+    margin-top: 40px;
+    font-weight: 600;
+    opacity: 0.8;
 }

@@ -1,73 +1,75 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - PrimeCater</title>
-
-<link rel="icon" href="{{ asset('images/favicon.png') }}" type="image/png">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css">
-
-@vite('resources/css/app.css')
-
+    <title>Login Prime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+<body class="hold-transition login-page">
 
-<body class="hold-transition">
+<div class="login-box">
+    <div class="card login-card floating-card">
+        <div class="card-body login-card-body">
 
-<div class="container-fluid">
-    <div class="row vh-100">
-
-    <div class="col-md-9 p-0">
-        <img src="{{ asset('images/carne.jpg') }}" class="w-100 h-100 img-cover" alt="Imagem de fundo">
-    </div>
-    
-    <div class="col-md-3 d-flex align-items-center justify-content-center bg-black text-white">
-        <div class="login-box-custom">
-
-            <div class="text-center mb-4">
-                <img src="{{ asset('images/logo.png') }}" class="logo" alt="Logo">
+            <div class="text-center mb-5">
+                <h1 class="logo-text">prime</h1>
+                <p class="sub-logo">PIONEIRA EM SOLUÇÕES<br>INOVADORAS DE PROTEÍNAS</p>
             </div>
 
-            <h4 class="text-center">Bem-Vindo!</h4>
-            <p class="text-center text-muted small">Faça login de acesso para sua conta</p>
+            @if(session('erro'))
+                <div class="alert alert-danger py-2 mb-4" style="border-radius: 12px; font-size: 14px;">
+                    <i class="fas fa-exclamation-circle mr-2"></i> {{ session('erro') }}
+                </div>
+            @endif
 
-            <form method="POST" action="/login">
+            <form action="{{ route('login.auth') }}" method="POST">
                 @csrf
 
-                <div class="input-group mb-3">
-                    <input type="email" name="email" class="form-control custom-input" placeholder="seu@email.com" required>
+                <div class="form-group mb-4">
+                    <label class="label-custom">Digite o seu Email</label>
+                    <div class="custom-field-container">
+                        <span class="custom-icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                        <input type="email" name="email" class="custom-input-field" placeholder="........" required>
+                    </div>
                 </div>
 
-                <div class="input-group mb-3">
-                    <input type="password" name="password" class="form-control custom-input" placeholder="********" required>
+                <div class="form-group mb-4">
+                    <label class="label-custom">Senha</label>
+                    <div class="custom-field-container">
+                        <span class="custom-icon-box">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        <input type="password" name="password" class="custom-input-field" placeholder="........" required>
+                    </div>
                 </div>
 
-                <div class="form-check mb-3">
-                    <input class="form-check-input" type="checkbox" id="remember">
-                    <label class="form-check-label small" for="remember">
-                        Lembrar-me por 30 dias
-                    </label>
+                <div class="mb-4 d-flex align-items-center">
+                    <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" id="remember" name="remember">
+                        <label for="remember" class="custom-control-label check-label">
+                            Lembrar-me por 30 dias
+                        </label>
+                    </div>
                 </div>
 
-                <button type="submit" class="btn btn-block btn-custom">
-                    Entrar na conta
-                </button>
+                <div class="login-btn-container">
+                    <button type="submit" class="btn login-btn">
+                        Entrar na conta
+                    </button>
+                </div>
 
             </form>
-
-            <p class="text-center mt-3 small text-muted">© 2026 Cava</p>
-
         </div>
     </div>
 
+    <p class="text-center mt-4 copyright">
+        © Prime
+    </p>
 </div>
-</div>
-
-@vite('resources/js/app.js')
 
 </body>
 </html>
