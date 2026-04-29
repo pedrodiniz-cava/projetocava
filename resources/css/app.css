@@ -1,9 +1,8 @@
 @import 'admin-lte/dist/css/adminlte.min.css';
 @import '@fortawesome/fontawesome-free/css/all.min.css';
 
-/* 1. Ajustes Globais */
 body.login-page {
-    background-color: #f4f6f9 !important; /* Cinza leve para destacar a sombra branca */
+    background-color: #f4f6f9 !important; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,23 +15,18 @@ body.login-page {
     width: 420px !important;
 }
 
-/* 2. Efeito de Flutuação e Sombra */
 .floating-card {
     border-radius: 40px !important;
     border: none !important;
     background: #ffffff;
     padding: 20px 10px;
-    
-    /* Sombra Profunda (Efeito de Flutuação) */
     box-shadow: 0 35px 90px rgba(0, 0, 0, 0.18) !important;
-    
-    /* Ativa a animação suave de subir e descer */
     animation: floatingEffect 4s ease-in-out infinite;
 }
 
 @keyframes floatingEffect {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-15px); } /* Sobe 15px */
+    50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
 }
 
@@ -41,7 +35,6 @@ body.login-page {
     padding: 25px !important;
 }
 
-/* 3. Logo e Tipografia (Espaçamento Ajustado) */
 .logo-text {
     color: #1d2c8f;
     font-weight: 700;
@@ -52,18 +45,52 @@ body.login-page {
     text-transform: lowercase;
 }
 
+.dot-i {
+    position: relative;
+    display: inline-block;
+    width: 16px;      
+    height: 45px;     
+    color: transparent !important;
+    vertical-align: bottom;
+    margin-left: 5px;  
+    margin-right: 2px;
+}
+
+.dot-i::before {
+    content: '';
+    position: absolute;
+    bottom: 20%;      
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11px;      
+    height: 31px;     
+    background-color: #1d2c8f;
+    border-radius: 1px;
+}
+
+.dot-i::after {
+    content: '';
+    position: absolute;
+    top: -12px;       
+    left: 50%;
+    transform: translateX(-50%);
+    width: 11px;      
+    height: 11px;     
+    background-color: #ff6600; 
+    border-radius: 50%;
+}
+
 .sub-logo {
     font-size: 10px;
-    color: #a0a0a0;
+    color: #212529;   
     letter-spacing: 1.5px;
     text-transform: uppercase;
     line-height: 1.4;
-    margin-top: 25px; /* Espaço maior solicitado entre Prime e a Frase */
+    margin-top: 25px;
     display: block;
-    font-weight: 500;
+    font-weight: 700;  
 }
 
-/* 4. Labels e Campos */
 .label-custom {
     color: #1d2c8f;
     font-size: 14px;
@@ -82,13 +109,6 @@ body.login-page {
     height: 52px;
     padding: 0 20px;
     margin-bottom: 5px;
-    transition: all 0.3s;
-}
-
-/* Efeito de foco no campo */
-.custom-field-container:focus-within {
-    box-shadow: 0 0 10px rgba(29, 44, 143, 0.15);
-    border-color: #151f6d;
 }
 
 .custom-icon-box {
@@ -108,18 +128,9 @@ body.login-page {
     height: 100%;
     color: #1d2c8f;
     font-size: 16px;
-    padding-left: 15px !important; /* Evita que o texto bata no ícone */
+    padding-left: 15px !important;
 }
 
-/* 5. Checkbox */
-.check-label {
-    font-weight: 400 !important;
-    color: #1d2c8f;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-/* 6. Botão Centralizado */
 .login-btn-container {
     display: flex;
     justify-content: center;
@@ -142,14 +153,11 @@ body.login-page {
 .login-btn:hover {
     background-color: #0d144d !important;
     transform: scale(1.02);
-    box-shadow: 0 10px 20px rgba(21, 31, 109, 0.2);
 }
 
-/* 7. Copyright */
 .copyright {
     color: #1d2c8f;
     font-size: 13px;
     margin-top: 40px;
     font-weight: 600;
-    opacity: 0.8;
 }

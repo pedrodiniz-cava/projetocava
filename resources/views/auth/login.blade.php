@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Prime</title>
+    <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}?v=1">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -14,7 +15,7 @@
         <div class="card-body login-card-body">
 
             <div class="text-center mb-5">
-                <h1 class="logo-text">prime</h1>
+                <h1 class="logo-text">pr<span class="dot-i">i</span>me</h1>
                 <p class="sub-logo">PIONEIRA EM SOLUÇÕES<br>INOVADORAS DE PROTEÍNAS</p>
             </div>
 
