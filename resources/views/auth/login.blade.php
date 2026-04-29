@@ -10,7 +10,7 @@
 <body>
     <div class="login-container">
         <div class="image-section">
-        <img src="{{ asset('images/carne.jpg') }}" alt="Imagem">
+        <img src="{{ asset('images/carne.jepg') }}" alt="Imagem">
         </div>
 
         <div class="form-section">

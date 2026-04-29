@@ -1,69 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Cor roxa na navbar */
+.main-header.navbar {
+    background: #000 !important;
 }
 
-body {
+/* Cor roxa na sidebar */
+.main-sidebar {
+    background: #1a0a33 !important;
+}
+
+.brand-link {
+    background: #4b1d87 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Item ativo no menu */
+.nav-sidebar .nav-link.active {
+    background: #4b1d87 !important;
+}
+
+/* Fundo do conteúdo */
+.content-wrapper {
     background: #d9d9d9;
-    height: 100vh;
 }
 
-/* TOPO (agora é uma div) */
-.topo {
-    background: #4b1d87;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 30px;
-    color: white;
-}
-
-/* TEXTO */
-.topo span {
-    font-size: 18px;
-}
-
-/* FORM */
-.topo form {
-    margin: 0;
-}
-
-/* BOTÃO */
-.topo button {
-    background: #e6e6e6;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.topo button:hover {
-    background: #ccc;
-}
-
-/* CONTEÚDO */
-.conteudo {
-    height: calc(100vh - 80px);
-}
-
-/* CANTOS */
-.canto {
-    position: fixed;
-    width: 120px;
-    height: 120px;
-    background: #4b1d87;
-}
-
-.esquerdo {
-    bottom: 0;
-    left: 0;
-}
-
-.direito {
-    bottom: 0;
-    right: 0;
+/* Footer */
+.main-footer {
+    background: #1a0a33;
+    color: rgba(255,255,255,0.6);
+    border-top: none;
 }
